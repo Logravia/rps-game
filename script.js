@@ -13,18 +13,36 @@ function printPrompt() {
 }
 
 function doPrompt() {
-    let userChoice = prompt();
-    if (userChoice === parseInt(userChoice, 10)) {
+    let userChoice = parseInt(prompt());
+    if (userChoice <= 3  && userChoice >= 1) {
         return userChoice;
     } else {
-        return false;
+        return doPrompt();
     }
 }
 
-function getBattleResult() {
-
+function printChoices(){
+    console.log(`Computer chose: ${aiChoice}\nPlayer chose: ${pChoice}`)
 }
 
-let computerChoice = fightTools[getRandChoice()];
+function getBattleResult() {
+    if (aiChoice === pChoice) {
+        return "Tie"
+    }
+    elif ( (aiChoice === "Rock" && pChoice === "Scissors") ||
+           (aiChoice === "Paper" && pChoice === "Rock") ||
+           (aiChoice === "Scissors" && pChoice === "Paper"))  {
+        return "Loss"
+    }
+    else return "Victory"
+}
 
+let aiChoice = fightTools[getRandChoice()];
+let pChoice = fightTools[doPrompt() - 1]
 
+if (pChoice === false ){
+    //End game
+}
+
+console.log(printChoice())
+console.log(`Game result: ${getBattleResult()}`)
