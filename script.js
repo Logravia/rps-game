@@ -1,4 +1,5 @@
 const fightTools = ["Rock", "Paper", "Scissors"]
+const pFightTools = ["Paper", "Scissors", "Rock"]
 
 function getRandChoice(){
     let max = 3;
@@ -35,13 +36,10 @@ function getBattleResult() {
         return "Victory";
     }
 }
+printPrompt()
 
 let aiChoice = fightTools[getRandChoice()];
 let pChoice = fightTools[doPrompt() - 1]
-
-if (pChoice === false ){
-    //End game
-}
 
 console.log(printChoices())
 console.log(`Game result: ${getBattleResult()}`)
