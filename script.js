@@ -27,14 +27,13 @@ function printChoices(){
 
 function getBattleResult() {
     if (aiChoice === pChoice) {
-        return "Tie"
+        return "Tie";
+    } else if ( (aiChoice === "Rock" && pChoice === "Scissors") || (aiChoice === "Paper" && pChoice === "Rock") || (aiChoice === "Scissors" && pChoice === "Paper")
+){
+        return "Loss";
+    } else {
+        return "Victory";
     }
-    elif ( (aiChoice === "Rock" && pChoice === "Scissors") ||
-           (aiChoice === "Paper" && pChoice === "Rock") ||
-           (aiChoice === "Scissors" && pChoice === "Paper"))  {
-        return "Loss"
-    }
-    else return "Victory"
 }
 
 let aiChoice = fightTools[getRandChoice()];
@@ -44,5 +43,5 @@ if (pChoice === false ){
     //End game
 }
 
-console.log(printChoice())
+console.log(printChoices())
 console.log(`Game result: ${getBattleResult()}`)
