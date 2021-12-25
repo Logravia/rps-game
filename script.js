@@ -1,5 +1,5 @@
-const fightTools = ["Rock", "Paper", "Scissors"]
-const pFightTools = ["Paper", "Scissors", "Rock"]
+const pcChoices = ["Rock", "Paper", "Scissors"]
+const aiChoices = ["Paper", "Scissors", "Rock"]
 
 function getRandChoice(){
     let max = 3;
@@ -8,8 +8,8 @@ function getRandChoice(){
 
 function printPrompt() {
     console.log("Choose one of these:\n");
-    for (let i = 0; i < fightTools.length; i++) {
-        console.log(`${i+1}. ${fightTools[i]}\n`);
+    for (let i = 0; i < pcChoices.length; i++) {
+        console.log(`${i+1}. ${pcChoices[i]}\n`);
     }
 }
 
@@ -23,23 +23,22 @@ function doPrompt() {
 }
 
 function printChoices(){
-    console.log(`Computer chose: ${aiChoice}\nPlayer chose: ${pChoice}`)
+    console.log(`Computer chose: ${aiChoices[aiChoice]}\nPlayer chose: ${pcChoices[pcChoice]}`)
 }
 
 function getBattleResult() {
-    if (aiChoice === pChoice) {
-        return "Tie";
-    } else if ( (aiChoice === "Rock" && pChoice === "Scissors") || (aiChoice === "Paper" && pChoice === "Rock") || (aiChoice === "Scissors" && pChoice === "Paper")
-){
+    if (aiChoice === pcChoice) {
         return "Loss";
+    } else if (pcChoices[pcChoice] === aiChoices[aiChoice]) {
+        return "Tie"
     } else {
         return "Victory";
     }
 }
-printPrompt()
 
-let aiChoice = fightTools[getRandChoice()];
-let pChoice = fightTools[doPrompt() - 1]
+printPrompt()
+let aiChoice = getRandChoice();
+let pcChoice = doPrompt() - 1
 
 console.log(printChoices())
 console.log(`Game result: ${getBattleResult()}`)
