@@ -36,9 +36,16 @@ function getBattleResult() {
     }
 }
 
-printPrompt()
-let aiChoice = getRandChoice();
-let pcChoice = doPrompt() - 1
+function printGameResult() {
+    console.log(`Game result: ${getBattleResult()}`)
+}
 
-console.log(printChoices())
-console.log(`Game result: ${getBattleResult()}`)
+function playGame() {
+    printPrompt()
+    let pcChoice = doPrompt() - 1
+    let aiChoice = getRandChoice();
+    printChoices()
+    printGameResult()
+}
+
+playGame()
