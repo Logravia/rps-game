@@ -32,7 +32,6 @@ function printChoices(aiChoice, pcChoice){
     console.log(`Computer chose: ${aiChoices[aiChoice]}\nPlayer chose: ${pcChoices[pcChoice]}`);
 }
 
-//Generates battle result with two checks
 function getBattleResult(aiChoice,pcChoice) {
     //When the same indice is chosen on two sorted arrays, player always looses
     if (aiChoice === pcChoice) {
@@ -53,6 +52,16 @@ function printScore() {
     console.log(`Computer won ${aiWins} times`)
 }
 
+function updateScore(gameResult) {
+    if (gameResult === "Victory") {
+        pcWins++;
+        aiLosses++;
+    } else if (gameResult === "Loss") {
+        aiWins++;
+        pcLosses++;
+    }
+}
+
 let pcWins = 0;
 let pcLosses = 0;
 
@@ -70,15 +79,8 @@ function playRound() {
     printChoices(aiChoice,pcChoice);
     printGameResult(gameResult);
 
-    if (gameResult === "Victory") {
-        pcWins++;
-        aiLosses++;
-    } else if (gameResult === "Loss") {
-        aiWins++;
-        pcLosses++;
-    }
-
     printScore();
+    updateScore(gameResult);
 
 }
 

@@ -1,0 +1,10 @@
+#+TITLE: TODO
+* Plan
+** [X] Test script link works
+** [X] Make computer randomly choose 0-2
+** [X] Correlate 0-2 to rock, paper, sciscors
+** [X] Store result
+** [X] Get user input from console and store it
+** [X] Compare computer choice to human choice
+** [X] Set-up conditionals (rockAI vs playerSciscors => loose)
+** [X] Print loose message
