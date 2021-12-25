@@ -22,11 +22,11 @@ function doPrompt() {
     }
 }
 
-function printChoices(){
+function printChoices(aiChoice, pcChoice){
     console.log(`Computer chose: ${aiChoices[aiChoice]}\nPlayer chose: ${pcChoices[pcChoice]}`)
 }
 
-function getBattleResult() {
+function getBattleResult(aiChoice,pcChoice) {
     if (aiChoice === pcChoice) {
         return "Loss";
     } else if (pcChoices[pcChoice] === aiChoices[aiChoice]) {
@@ -36,16 +36,16 @@ function getBattleResult() {
     }
 }
 
-function printGameResult() {
-    console.log(`Game result: ${getBattleResult()}`)
+function printGameResult(aiChoice,pcChoice) {
+    console.log(`Game result: ${getBattleResult(aiChoice,pcChoice)}`)
 }
 
 function playGame() {
     printPrompt()
     let pcChoice = doPrompt() - 1
     let aiChoice = getRandChoice();
-    printChoices()
-    printGameResult()
+    printChoices(aiChoice,pcChoice)
+    printGameResult(aiChoice,pcChoice)
 }
 
 playGame()
