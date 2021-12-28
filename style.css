@@ -1,0 +1,25 @@
+img {
+    display: block;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.choice-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 15rem;
+}
+
+.choice {
+    border-style: solid;
+    text-align: center;
+    height: 10rem;
+    width: 10rem;
+}
+
+

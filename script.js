@@ -1,5 +1,5 @@
 //Having two seperate arrays allows for simpler logic
-// When pc an ai choose the same indice, pc always looses
+// When pc and  ai choose the same indice, pc always looses
 const pcChoices = ["Rock", "Paper", "Scissors"]
 const aiChoices = ["Paper", "Scissors", "Rock"]
 
@@ -71,6 +71,7 @@ let aiLosses = 0;
 //Game flow for a single round
 function playRound() {
     printPrompt();
+    // Gotta update
     let pcChoice = doPrompt() - 1;
     let aiChoice = getRandChoice();
     //Stores whether it is player "Victory", "Loss" or "Tie" with respective string.
@@ -84,4 +85,3 @@ function playRound() {
 
 }
 
-playRound()
