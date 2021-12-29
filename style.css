@@ -1,3 +1,5 @@
+
+
 img {
     display: block;
 }
@@ -33,4 +35,8 @@ header, .score-header, .result-header {
 .round-choice {
     display: flex;
     justify-content: space-evenly;
+}
+
+#vs {
+    justify-self: center;
 }
