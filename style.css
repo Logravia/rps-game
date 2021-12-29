@@ -2,7 +2,7 @@ img {
     display: block;
 }
 
-header {
+header, .score-header, .result-header {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -23,3 +23,14 @@ header {
 }
 
 
+.score-container {
+    display: flex;
+    flex: 0 1 auto;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.round-choice {
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -26,7 +26,13 @@ function doPrompt() {
 }
 //Prints choices made by the computer and player
 function printChoices(aiChoice, pcChoice){
-    console.log(`Computer chose: ${aiChoices[aiChoice]}\nPlayer chose: ${pcChoices[pcChoice]}`);
+    let pcChoiceShowplace = document.getElementById('pcChoice')
+    let aiChoiceShowplace = document.getElementById('aiChoice')
+    let vs = document.getElementById('vs');
+
+    pcChoiceShowplace.textContent = `${pcChoices[pcChoice]}`
+    vs.textContent = 'vs'
+    aiChoiceShowplace.textContent = `${aiChoices[aiChoice]}`
 }
 function getBattleResult(aiChoice,pcChoice) {
     //When the same indice is chosen on two sorted arrays, player always looses
@@ -39,11 +45,11 @@ function getBattleResult(aiChoice,pcChoice) {
     }
 }
 function printGameResult(result) {
-    console.log(`Game result: ${result}`);
+    document.getElementById('battleResult').textContent = result;
 }
 function printScore() {
-    console.log(`You won ${pcWins} times`);
-    console.log(`Computer won ${aiWins} times`)
+    document.getElementById('pcScore').textContent = pcWins;
+    document.getElementById('aiScore').textContent = aiWins;
 }
 function updateScore(gameResult) {
     if (gameResult === "Victory") {
@@ -80,7 +86,6 @@ const playRound = (e) => {
 
     updateScore(gameResult);
     printScore();
-
 }
 
 const btnChoices = document.querySelectorAll('.choice');
