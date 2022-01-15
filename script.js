@@ -3,17 +3,17 @@
 const pcChoices = ["Rock", "Paper", "Scissors"];
 const aiChoices = ["Paper", "Scissors", "Rock"];
 
-//generates random number of 0 up to 2
+// rand choice from 0 to 2
 function getRandChoice(){
     let max = 3;
     return Math.floor(Math.random() * max);
 }
 
-//Prints choices made by the computer and player
+// Prints choices made by the computer and player
 function printChoices(aiChoice, pcChoice){
     let pcChoiceShowplace = document.getElementById('pcChoice');
-    let aiChoiceShowplace = document.getElementById('aiChoice');
     let vs = document.getElementById('vs');
+    let aiChoiceShowplace = document.getElementById('aiChoice');
 
     pcChoiceShowplace.textContent = `${pcChoices[pcChoice]}`;
     vs.textContent = 'vs';
@@ -39,16 +39,12 @@ function printScore() {
 function updateScore(gameResult) {
     if (gameResult === "Victory") {
         pcWins++;
-        aiLosses++;
     } else if (gameResult === "Loss") {
         aiWins++;
-        pcLosses++;
     }
 }
 let pcWins = 0;
-let pcLosses = 0;
 let aiWins = 0;
-let aiLosses = 0;
 
 //Game flow for a single round
 const playRound = (e) => {
