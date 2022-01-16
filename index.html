@@ -1,72 +1,51 @@
-<!---
-
-    Style it as Fire Water Wood
-
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rock Paper Scissors</title>
+    <title>Wood Fire Water</title>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Rock Paper Scissors</h1>
-    </header>
 
-    <main>
-        <div class="choice-container">
-
-           <div class="choice" data-choice="0">
-               <img src="./res/wood.png" alt="">
-               <p>Rock</p>
-           </div> 
-
-           <div class="choice" data-choice="1">
-               <img src="./res/fire.png" alt="">
-               <p>Paper</p>
+    <div class="choice-score">
+        <div class="card">
+            <div class="choice-container">
+            <div class="choice" data-choice="0">
+                <img src="./res/wood.png" alt="">
             </div>
-
-           <div class="choice" data-choice="2">
-               <img src="./res/water.png" alt="">
-               <p>Scissors</p>
-           </div> 
+            <div class="choice" data-choice="1">
+                <img src="./res/fire.png" alt="">
+                </div>
+            <div class="choice" data-choice="2">
+                <img src="./res/water.png" alt="">
+            </div>
+            </div>
         </div>
-
-
-        <div class="result-header">
-            <h1 id="battleResult"></h2>
-        </div>
-
-        <div class="round-choice">
-            <h2 id="pcChoice"></h3>
-            <h2 id="vs"></h3>
-            <h2 id="aiChoice"></h3>
-        </div>
-
-
+        <div class="card">
             <div class="score-header">
-                <h2>Score</h2>
+                <h1>Score</h1>
             </div>
-
-        <div class="score-container"> 
-
             <div class="score-box player">
-                <h3>Player</h3>
-                <span id="pcScore">0</span>
+                <h3>Player: <span id="pcScore">0</span></h3>
             </div>
 
             <div class="score-box computer">
-                <h3>Computer</h3>
-                <span id="aiScore"">0</span>
+                <h3>Computer: <span id="aiScore"">0</span></h3>
+            </div>
+        </div>
+    </div>
+    <div class="card result">
+            <div class="result-header">
+                <h1 id="battleResult">Tell me your choice</h2>
             </div>
 
+            <div class="round-choice">
+                <h2 id="pcChoice"></h3>
+                <h2 id="vs"></h3>
+                <h2 id="aiChoice"></h3>
+            </div>
         </div>
-    </main>
 
-    <footer></footer>
-    
 </body>
 </html>
