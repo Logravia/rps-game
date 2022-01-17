@@ -1,7 +1,7 @@
 //Having two seperate arrays allows for simpler logic
 // When pc and  ai choose the same indice, pc always looses
-const pcChoices = ["Rock", "Paper", "Scissors"];
-const aiChoices = ["Paper", "Scissors", "Rock"];
+const pcChoices = ["Wood", "Fire", "Water"];
+const aiChoices = ["Fire", "Water", "Wood"];
 
 // rand choice from 0 to 2
 function getRandChoice(){

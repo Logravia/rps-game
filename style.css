@@ -3,23 +3,34 @@ html, body {
     margin: 0;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
+
 h1,h2 {
     margin: 0;
     text-align: center;
 }
 
-.title {
-    margin-bottom: 2rem;
+.title.card {
+text-shadow: 0px 1px 0px rgba(0,0,0,.5);
+color: #003049;
+margin-top:  2rem;
+font-size: 2.5rem;
+align-self: stretch;
+flex-grow: 1;
 }
 
 .choice-score {
     display: flex;
     gap: 1rem;
     flex: wrap;
+    transition-delay: 200ms;
 }
 
-button{
-    display: block;
+.card.result{
+    flex-grow: 1;
 }
 
 body {
@@ -31,11 +42,11 @@ body {
 }
 
 .card {
-    width: fit-content;
+    min-width: fit-content;
     padding: 2rem;
     background: white;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 10px 14px 33px 1px rgba(0,0,0,0.61);
     margin-top: 2rem;
 }
@@ -44,6 +55,7 @@ body {
     display: block;
     width: 75%;
     margin: 0 auto;
+    transition-duration: 320ms;
 }
 
 header, .score-header, .result-header {
@@ -72,9 +84,15 @@ header, .score-header, .result-header {
     text-align: center;
     height: 10rem;
     width: 10rem;
+    border-radius: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-duration: 200ms;
+}
+
+.choice:hover{
+ box-shadow: 0 0 30px inset white;
 }
 
 .choice>img:hover{
@@ -84,6 +102,8 @@ header, .score-header, .result-header {
 }
 
 
+
+
 .score-container {
     display: flex;
     flex: 0 1 auto;
@@ -91,13 +111,17 @@ header, .score-header, .result-header {
     text-align: center;
 }
 
+
+
 .round-choice {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
 #vs {
-    justify-self: center;
     color: #d62828;
+    flex-grow: 1;
 }
 
