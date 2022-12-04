@@ -35,6 +35,7 @@ function printGameResult(result) {
 function printScore() {
     document.getElementById('pcScore').textContent = pcWins;
     document.getElementById('aiScore').textContent = aiWins;
+    document.getElementById('roundCount').textContent = roundCount;
 }
 function updateScore(gameResult) {
     if (gameResult === "Victory") {
@@ -42,9 +43,11 @@ function updateScore(gameResult) {
     } else if (gameResult === "Loss") {
         aiWins++;
     }
+    roundCount++;
 }
 let pcWins = 0;
 let aiWins = 0;
+let roundCount = 0;
 
 //Game flow for a single round
 const playRound = (e) => {
